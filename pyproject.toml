@@ -1,0 +1,9 @@
+[project]
+name = "job-agent"
+version = "0.1.0"
+description = "A job-search agent that proposes actions and waits for explicit approval"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.7"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
