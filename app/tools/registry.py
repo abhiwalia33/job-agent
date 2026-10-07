@@ -1,6 +1,6 @@
 """Tool registry. Read-only tools run immediately; consequential tools only create proposals."""
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field  # CHANGED: added "field"
 from typing import Any
 
 from app.approval import ApprovalGate
@@ -12,6 +12,7 @@ class ReadTool:
     name: str
     description: str
     fn: Callable[..., Any]
+    parameters: dict = field(default_factory=dict)  # CHANGED: new line
 
 
 @dataclass
